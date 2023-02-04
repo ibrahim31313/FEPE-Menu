@@ -1,0 +1,134 @@
+:root {
+    --primary-color-900: #20262E;
+    --primary-color-200: #E9E8E8;
+
+    --secondary-color-500: #913175;
+    --secondary-color-400: #CD5888;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+}
+.header {
+    width: 100%;
+    height: 72px;
+    background-color: var(--primary-color-900);}
+.header .container {
+    width: 85%;
+    margin: auto;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+@media (max-width : 765px) {
+    .header .container {
+        width: 100%;
+    }
+}
+.header h1 a {
+    height: 72px;
+    display: flex;
+    align-items: center;
+    color: var(--primary-color-200);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+}
+.header nav ul {
+    height: 72px;
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+@media (max-width : 765px) {
+    .header nav ul {
+        background-color: var(--primary-color-900);
+        position: absolute;
+        top: 72px;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        height: calc(90vh - 72px);
+        width: 70%;
+        padding-top: 30px;
+        transition: 0.3s ease-in-out;
+        transform: translateX(100%);
+}
+    .header nav .active {
+        transform: translateX(0%);
+    }
+}
+.header nav ul li {
+    height: 72px;
+    display: flex;
+    align-items: center;
+    margin: 0 15px;
+}
+.header nav ul li:last-child {
+    margin-right: 0;
+}
+.header nav ul a {
+    color: var(--primary-color-200);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+.header nav ul a::first-letter {
+    text-transform: uppercase;
+}
+.header nav ul a:hover {
+    color: var(--secondary-color-400);
+}
+.icon {
+    height: 24px;
+    width: 40px;
+    position: relative;
+    z-index: 4;
+    cursor: pointer;
+    display: none;
+}
+.icon span {
+    height: 3px;
+    width: 100%;
+    background-color: var(--primary-color-200);
+    position: absolute;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+.icon span:first-child {
+    top: 0;
+}
+.icon span:nth-child(2) {
+    top: 12px;
+}
+.icon span:last-child {
+    top: 24px;
+}
+.icon .active:first-child {
+    top: 12px;
+    transform: rotate(45deg);
+}
+.icon .active:nth-child(2) {
+    top: 12px;
+    display: none;
+}
+.icon .active:last-child {
+    top: 12px;
+    transform: rotate(-45deg);
+}
+@media (max-width : 765px) {
+    .icon {
+        display: block;
+    }
+}
